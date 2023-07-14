@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    .shape-bar:before {
+        content: "";
+        display: grid;
+        place-items: center;
+        width: 1px;
+        height: 20px;
+        background-color: #00aeef;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+
+    .shape-bar-black:before {
+        content: "";
+        display: grid;
+        place-items: center;
+        width: 1px;
+        height: 20px;
+        background-color: #000;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+
+    .icon {
+        font-family: "Font Awesome6 Free";
+        font-weight: 700;
+        font-size: 0.8rem;
+        color: black;
+        width: inherit;
+        display: grid;
+        place-items: center;
+    }
+
+    .icon-home::before {
+        content: "\f015";
+        color: #00aeef;
+    }
+
+    .icon-phone::before {
+        content:
+            "\f095";
+        color: #00aeef;
+    }
+
+    .icon-send::before {
+        content: "\f1d8";
+    }
+
+    .icon-globe::before {
+        content: "\f0ac";
+    }
+
+    .icon-envelop::before {
+        content:
+            "\f0e0";
+    }
+
+    .top-left-border {
+        clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+    }
+
+    .top-left-border-p {
+        clip-path: polygon(0 52%, 100% 0%, 100% 49%,
+                0% 100%);
+    }
+
+    .bottom-right-border {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
