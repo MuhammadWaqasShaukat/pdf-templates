@@ -79,7 +79,7 @@ const data = [
     website: "ddreye5@merriam-webster.com",
     phone: "695-366-0326",
     phone1: "356-543-5254",
-    logo: "https://robohash.org/delectusimpeditquo.png?size=50x50&set=set1",
+    logo: "./assets/v-logo.png",
     company: "Lemke and Sons",
   },
   {
@@ -92,7 +92,7 @@ const data = [
     phone: "212-976-4168",
     phone1: "463-401-8882",
     logo: "./assets/tepb-logo.png",
-    company: "Hoppe-Heaney",
+    company: "Hoppe-Hgy",
   },
   {
     id: 8,
@@ -134,16 +134,6 @@ const data = [
     slogan: "We turn insights into impact.",
   },
 ];
-
-// const data = {
-//   company: "FINANCE",
-//   title: "MORGAN MAXWELL",
-//   designation: "SALES MANAGER",
-//   email: "hello@reallygreatsite.com",
-//   location: "123 Anywhere St., Any City",
-//   phone: "+123-456-7890",
-//   website: "reallygreatsite.com",
-// };
 
 Handlebars.registerHelper("imageDataUri", function (filePath) {
   filePath = path.resolve(__dirname, `./public/assets/${filePath}`);
@@ -210,87 +200,10 @@ async function generatePdf(templateName, templateData) {
   }
 }
 
-// generatePdf("template3", data[3]);
+generatePdf("template3", data[3]);
 // generatePdf("template4", data[2]);
 // generatePdf("template5", data[5]);
 // generatePdf("template6", data[6]);
 // generatePdf("template7", data[7]);
 // generatePdf("template8", data[1]);
-generatePdf("template9", data[9]);
-
-// var Handlebars = require("handlebars");
-// const puppeteer = require("puppeteer");
-// const express = require("express");
-// var fs = require("fs");
-// var path = require("path");
-
-// const app = express();
-// app.use(express.static("public"));
-
-// const data = {
-//   company: "FINANCE",
-//   title: "MORGAN MAXWELL",
-//   designation: "SALES MANAGER",
-//   email: "hello@reallygreatsite.com",
-//   location: "123 Anywhere St., Any City",
-//   phone: "+123-456-7890",
-//   website: "reallygreatsite.com",
-// };
-
-// Handlebars.registerHelper("imageDataUri", function (filePath) {
-//   filePath = path.resolve(__dirname, `./public/assets/${filePath}`);
-
-//   const fileContent = fs.readFileSync(filePath).toString("base64");
-//   const mimeType = "image/jpeg";
-
-//   return `data:${mimeType};base64,${fileContent}`;
-// });
-
-// function generatePdf(templateName, templateData) {
-//   fs.readFile(
-//     path.resolve(__dirname, `./views/partials/${templateName}.handlebars`),
-//     function (err, data) {
-//       if (!err) {
-//         var source = data.toString();
-//         var template = Handlebars.compile(source);
-//         var outputString = template(templateData);
-
-//         fs.writeFile(
-//           path.resolve(__dirname, `./public/index.html`),
-//           outputString,
-
-//           async () => {
-//             const browser = await puppeteer.launch();
-
-//             const page = await browser.newPage();
-
-//             const widthInPixels = Math.floor(3.5 * 96);
-//             const heightInPixels = Math.floor(2 * 96);
-
-//             const filePath =
-//               "file://" + path.resolve(__dirname, `./public/index.html`);
-
-//             await page.goto(filePath, { waitUntil: "networkidle0" });
-
-//             await page.setViewport({
-//               width: widthInPixels,
-//               height: heightInPixels,
-//             });
-
-//             const pdf = await page.pdf({
-//               path: `./pdfs/${templateName}.pdf`,
-//               printBackground: true,
-//               width: "3.5in",
-//               height: "2in",
-//             });
-
-//             await browser.close();
-//           }
-//         );
-//       } else {
-//       }
-//     }
-//   );
-// }
-
-// generatePdf("template6", data);
+// generatePdf("template9", data[9]);
